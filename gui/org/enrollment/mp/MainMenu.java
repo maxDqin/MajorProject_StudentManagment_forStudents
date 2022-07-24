@@ -52,12 +52,36 @@ private JPanel contentPane;
 				insertFrame.setVisible(true);
 			}
 		});
-		btnInsert.setBounds(69, 89, 123, 49);
+		btnInsert.setBounds(69, 89, 141, 49);
 		contentPane.add(btnInsert);
 		
 		JLabel lblEnrolmentMainMenu = new JLabel("Enrolment Main Menu");
-		lblEnrolmentMainMenu.setBounds(59, 32, 151, 35);
+		lblEnrolmentMainMenu.setBounds(69, 29, 151, 35);
 		contentPane.add(lblEnrolmentMainMenu);
+		
+		JButton btnNewButton = new JButton("Update/Withdraw");
+		btnNewButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Update updateFrame = new Update();
+				updateFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+				updateFrame.setVisible(true);
+			}
+		});
+		btnNewButton.setBounds(69, 150, 141, 54);
+		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Score");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Score scoreFrame = new Score();
+				scoreFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+				scoreFrame.setVisible(true);
+			}
+		});
+		btnNewButton_1.setBounds(69, 216, 141, 45);
+		contentPane.add(btnNewButton_1);
 		
 		
 	}

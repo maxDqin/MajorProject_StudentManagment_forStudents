@@ -124,17 +124,17 @@ public class InsertEnrolment extends JFrame {
 					int semester = array_semester[i];
 					int result = 888;
 					try {
-						Class.forName(_____);
-						Connection con =DriverManager.getConnection(_____);
-						PreparedStatement stmt=con.prepareStatement(_____);
+						Class.forName("org.sqlite.JDBC");
+						Connection con =DriverManager.getConnection("jdbc:sqlite:./enrolmentSystem.db");
+						PreparedStatement stmt=con.prepareStatement("insert into enrolment values(?,?,?,?,?,?,?,?)");
 						stmt.setString(1, sid);
-						stmt.setString(2, _____);
-						stmt.setString(_____, _____);
-						stmt.setString(_____, _____);
-						stmt.setString(_____, _____);
-						stmt.setString(6, _____);
-						stmt.setInt(7, _____);
-						stmt.setInt(_____, _____);
+						stmt.setString(2, firstName);
+						stmt.setString(3, surname);
+						stmt.setString(4, sub_code);
+						stmt.setString(5, sub_name);
+						stmt.setString(6, year);
+						stmt.setInt(7, semester);
+						stmt.setInt(8, result);
 						status = stmt.executeUpdate();
 					}catch(SQLException e1) {
 						System.out.println(e1.getMessage());
@@ -143,10 +143,10 @@ public class InsertEnrolment extends JFrame {
 					}
 				}
 				
-				if(status==_____) {
-					textMessage._____("failed");
+				if(status==0) {
+					textMessage.setText("failed");
 				}else {
-					textMessage._____("inserted successfully");
+					textMessage.setText("inserted successfully");
 				}
 			}
 		});
